@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class UtilisateurController extends AbstractController
 {
-    #[Route('/', name: 'app_utilisateur')]
+    #[Route('/utilisateur', name: 'app_utilisateur')]
     public function index(ArticleRepository $articleRepo): Response
     {
         $articles = $articleRepo->findAll();

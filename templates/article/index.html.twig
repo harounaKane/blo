@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Articles{% endblock %}
+
+{% block body %}
+    <h2>Accueil</h2>
+
+     {% for article in articles %}
+          <div class="my-1">
+               <a href="{{ path('app_article_show', {'id': article.id}) }}">
+                    {{ article.titre }}
+               </a>
+               <div>{{ article.content | slice(0, 15)  }}...</div>
+               Rédigé par 
+               <strong>{{ article.userId.prenom ~ " " ~ article.userId.nom }}</strong>
+               {{ article.createdAt | format_datetime(locale='fr') }}
+          </div>
+     {% endfor %}
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Article{% endblock %}
+
+{% block body %}
+    <h2>Article</h2>
+
+     <div>{{ article.titre }}</div>
+     <div>{{ article.content }}</div>
+     Rédigé par 
+     <strong>{{ article.userId.prenom ~ " " ~ article.userId.nom }}</strong>
+     {{ article.createdAt | format_datetime(locale='fr') }}
+
+
+     
+
+{% endblock %}

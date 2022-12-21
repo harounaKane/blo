@@ -17,10 +17,20 @@
     <body>
         <header class="bg-secondary p-5">
             <h1 class="text-white text-center">
-                Encore un blog
+                <a href="{{ path('app_article') }}">Encore un blog</a>
             </h1>
-        </header>
+            <nav class="text-end">
+                <a href="{{ path('app_article_new') }}" class="text-white">New Article</a>
+            </nav>
+        </header>        
         <main class="container-fluid">
+
+            {# Messages flash #}
+            <div class="w-100 text-center">
+                {% for message in app.flashes("success") %}
+                    <div class="alert alert-success"> {{ message }} </div>
+                {% endfor %}
+            </div>
             {% block body %}{% endblock %}
         </main>
     </body>
